@@ -125,23 +125,29 @@ function showQuestion() {
     });
   }
 
+// filepath: /Users/johnnybaillargeaux/Documents/node/JBX028.github.io/script.js
 function handleAnswer(selectedLi, correctAnswer) {
   const selectedLetter = selectedLi.textContent.trim().charAt(0);
   const allChoices = document.querySelectorAll('#choices li');
 
   allChoices.forEach(li => {
-    li.style.pointerEvents = 'none';
-    const letter = li.textContent.trim().charAt(0);
-    if (letter === correctAnswer) {
-      li.classList.add('correct');
-    } else if (li === selectedLi) {
-      li.classList.add('incorrect');
-    }
+      li.style.pointerEvents = 'none';
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAnswer) {
+          li.classList.add('correct');
+      } else if (li === selectedLi) {
+          li.classList.add('incorrect');
+
+          // Force repaint for mobile browsers
+          li.style.display = 'none';
+          li.offsetHeight; // Trigger reflow
+          li.style.display = 'block';
+      }
   });
 
   if (selectedLetter === correctAnswer) {
-    correctAnswers++;
-    correctCountEl.textContent = correctAnswers;
+      correctAnswers++;
+      correctCountEl.textContent = correctAnswers;
   }
 
   explanationEl.textContent = questions[current].explanation || '';
