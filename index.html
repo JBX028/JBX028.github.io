@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Salesforce Quiz</title>
+        <link rel="stylesheet" href="style.css">
+      </head>
+<body>
+  <div class="container">
+    <h1>Salesforce Agentforce Quiz</h1>
+
+    <div id="session-controls">
+        <button id="start-btn">Start Session</button>
+        <button id="end-btn" class="hidden">End Session</button>
+        <div id="timer" class="hidden">Time: <span id="time">00:00</span></div>
+        <div id="score" class="hidden">
+            <div>Correct Answers: <span id="correct-count">0</span></div>
+            <div>Total Questions: <span id="total-questions">0</span></div>
+          </div>
+      </div>
+      
+
+    <div id="question-box" class="hidden">
+      <p id="question"></p>
+      <ul id="choices"></ul>
+      <p id="explanation" class="hidden"></p>
+      <button id="next-btn" class="hidden">Next Question</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+  
+.container {
+    max-width: 600px;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ccc;
+}
+  
+h1 {
+    text-align: center;
+}
+  
+#choices {
+    list-style: none;
+    padding: 0;
+}
+  
+#choices li {
+    margin: 10px 0;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+  
+#choices li:hover {
+    background-color: #f0f0f0;
+}
+  
+.correct {
+    background-color: #c8f7c5;
+    border-color: #2ecc71;
+}
+  
+.incorrect {
+    background-color: #f7c5c5;
+    border-color: #e74c3c;
+}
+  
+#explanation {
+    margin-top: 20px;
+    font-style: italic;
+}
+  
+.hidden {
+    display: none;
+}
+  
+button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#session-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+  
+#score {
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+#timer {
+    margin-left: 20px;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    #session-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    #choices li {
+        padding: 10px;
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    #score {
+        text-align: center;
+    }
+
+    #timer {
+        margin-left: 0;
+        text-align: center;
+    }
+}
