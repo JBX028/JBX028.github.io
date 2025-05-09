@@ -12,6 +12,7 @@ const startBtn = document.getElementById('start-btn');
 const endBtn = document.getElementById('end-btn');
 const scoreBox = document.getElementById('score');
 const correctCountEl = document.getElementById('correct-count');
+const percentageOfCorrectAnswersEl = document.getElementById('correct-percentage');
 
 const timerBox = document.getElementById('timer');
 const timeEl = document.getElementById('time');
@@ -62,6 +63,8 @@ function startSession() {
         correctAnswers = 0;
         secondsElapsed = 0;
         correctCountEl.textContent = correctAnswers;
+        correctCountEl.textContent = 'N/A';
+
   
         questionBox.classList.remove('hidden');
         endBtn.classList.remove('hidden');
@@ -149,6 +152,8 @@ function handleAnswer(selectedLi, correctAnswer) {
       correctAnswers++;
       correctCountEl.textContent = correctAnswers;
   }
+
+  percentageOfCorrectAnswersEl.textContent = `${Math.round((correctAnswers / totalQuestions) * 100)}%`;
 
   explanationEl.textContent = questions[current].explanation || '';
   explanationEl.classList.remove('hidden');
