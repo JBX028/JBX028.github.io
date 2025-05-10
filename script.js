@@ -63,8 +63,7 @@ function startSession() {
         correctAnswers = 0;
         secondsElapsed = 0;
         correctCountEl.textContent = correctAnswers;
-        correctCountEl.textContent = 'N/A';
-
+        percentageOfCorrectAnswersEl.textContent = 'N/A';
   
         questionBox.classList.remove('hidden');
         endBtn.classList.remove('hidden');
